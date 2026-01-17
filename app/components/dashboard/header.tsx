@@ -65,8 +65,8 @@ export function Header({ isDark, setIsDark }: HeaderProps) {
         <div className="flex items-center gap-2">
           <Button
             variant="outline"
-            size="sm"
-            className="border-primary/50 text-primary hover:bg-primary/10 bg-transparent"
+            size="lg"
+            className="border-primary/50 text-lg hover:bg-primary/10 bg-transparent"
           >
             <a
               href="https://github.com/farhinrahman1/Power-BI"
