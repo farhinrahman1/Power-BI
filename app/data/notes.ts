@@ -1,14 +1,18 @@
 export const notes = [
   {
     id: 1,
-    title: "Power BI Fundamentals — From Data to Decisions",
-    snippet: "Learn how Power BI turns raw data into interactive dashboards and insights.",
+    title: "Introduction to Power BI",
+    snippet:
+      "How Power BI transforms raw data into interactive dashboards and business insights.",
     category: "Data Visualization",
+    level: "Beginner",
+    readTime: "20 min",
     sections: [
       {
         heading: "What is Power BI?",
         content: `
 Power BI is Microsoft’s business intelligence platform that transforms raw data into interactive dashboards, reports, and insights.
+
 
 It enables organizations to:
 
@@ -65,41 +69,80 @@ It enables organizations to:
         `,
       },
       {
-        heading: "Wide World Importers (WWI) Dataset",
+        heading: "Importing & Transforming Data",
         content: `
-🌍 A real-world enterprise dataset for Power BI practice.
+Real-world data rarely comes in perfect form. Before visualization, data must be transformed.
 
-📌 Fact Table
+Common issues:
 
-- FactSales.csv – transactional sales data
+- Unnecessary columns
+- Inconsistent formatting
+- Extra characters
+- Blank rows
 
-📌 Dimension Tables
-
-- Customers, Employees, Products
-- Dates and Cities for time & geography
-
-🔎 What You Can Analyze
-
-- Sales trends over time
-- Regional performance
-- Product profitability
-- Employee metrics
+🛠 Data cleaning is done using the Power Query Editor while loading data.
         `,
       },
       {
-        heading: "Why This Matters",
+        heading: "Data Aggregation & Modeling",
         content: `
-Understanding Power BI fundamentals helps you:
-- Build scalable dashboards
-- Model data correctly
-- Communicate insights clearly
-- Work efficiently in BI teams
+Power BI allows aggregation across dimensions using:
+
+- Sum
+- Average
+- Min / Max
+- Variance
+
+Multiple datasets can be loaded and connected by:
+
+- Building relationships
+- Creating a proper data model
+        `,
+      },
+      {
+        heading: "Visualizing Data",
+        content: `
+📊 Common Visualization Types:
+
+- Column & Bar charts
+- Stacked & Clustered charts
+- Line & Area charts
+- Pie charts & Tree maps
+- Cards & Multi-row cards
+- Tables & Matrix visuals
+        `,
+      },
+      {
+        heading: "Drill Down & Interactivity",
+        content: `
+
+Hierarchies allow users to explore data at multiple levels:
+
+- Level 1 → Level 2 → Level 3
+
+Features:
+
+- Drill down
+- Drill through
+- Sorting & filtering
+- Viewing underlying data (right-click → Show as table)
+        `,
+      },
+      {
+        heading: "What I Built",
+        content: `
+By the end of this course, I:
+
+- Loaded multiple datasets
+- Built a data model
+- Cleaned data using Power Query
+- Created my first interactive Power BI report
         `,
       },
       {
         heading: "Key Takeaway",
         content: `
-✅ Power BI is not just a visualization tool — it is a **complete business intelligence ecosystem**.
+✅ Power BI is not just a visualization tool — it is a complete business intelligence ecosystem that turns data into decisions.
         `,
       },
     ],

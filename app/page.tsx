@@ -11,7 +11,8 @@ import { SkillsSection } from "./components/dashboard/skills-section";
 import { ProjectShowcase } from "./components/dashboard/project-showcase";
 import { PowerBIEmbed } from "./components/dashboard/powerbi-embed";
 import { GitHubActivity } from "./components/dashboard/github-activity";
-import { HireMe } from "./components/dashboard/hire-me-chat";
+import { Footer } from "./components/dashboard/footer";
+import Image from "next/image";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -44,14 +45,27 @@ export default function Home() {
         <div
           className={`mb-20 transition-all duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
         >
-          <div className="space-y-4">
+          <div className="space-y-6">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground text-balance">
               Power BI Dashboard
             </h1>
-            {/* <p className="text-xl text-muted-foreground max-w-2xl">
-              Track your progress, certificates, and creative works all in one
-              place
-            </p> */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              <div className="relative w-full">
+                <div className="rounded-2xl overflow-hidden border border-primary/30 shadow-2xl bg-muted/30">
+                  <Image
+                    src="/powerbicertificate.jpg"
+                    alt="Certificate preview"
+                    width={1600}
+                    height={900}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+              <div className="space-y-4">
+                <NotesSection />
+              </div>
+            </div>
           </div>
         </div>
 
@@ -105,14 +119,14 @@ export default function Home() {
             {/* Skills */}
             {/* <SkillsSection /> */}
 
-            {/* Notes */}
-            <NotesSection />
+            {/* Notes moved to hero beside certificate */}
+            {/* <NotesSection /> */}
           </div>
         </div>
       </div>
 
-      {/* Hire Me Chat Widget */}
-      <HireMe />
+      {/* Contact Footer */}
+      <Footer />
     </main>
   );
 }

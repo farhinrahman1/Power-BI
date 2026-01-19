@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "../ui/button";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
 
 interface HeaderProps {
   isDark: boolean;
@@ -11,6 +11,7 @@ interface HeaderProps {
 
 export function Header({ isDark, setIsDark }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,48 +22,52 @@ export function Header({ isDark, setIsDark }: HeaderProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navLinks = [
+    { href: "#certificates", label: "Certificates" },
+    { href: "#progress", label: "Progress" },
+    { href: "#works", label: "Works" },
+    { href: "#notes", label: "Notes" },
+  ];
+
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : "bg-transparent"}`}
-    >
-      <div className="container mx-auto px-4 py-4 max-w-7xl flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          {/* <div className="w-10 h-10 rounded-lg bg-linear-to-br from-primary to-accent flex items-center justify-center">
-            <span className="text-xl font-bold text-primary-foreground">P</span>
-          </div> */}
-          <span className="text-xl font-bold text-foreground hidden sm:inline">
-            Power BI
-          </span>
-        </div>
+    <>
+      <header
+        className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : "bg-transparent"}`}
+      >
+        <div className="container mx-auto px-4 py-4 max-w-7xl flex items-center justify-between">
+          {/* Mobile Menu Button - Left Side */}
+          <Button
+            variant="outline"
+            size="icon"
+            className="md:hidden border-primary/50 hover:bg-primary/10"
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            {mobileOpen ? (
+              <X className="w-5 h-5" />
+            ) : (
+              <Menu className="w-5 h-5" />
+            )}
+          </Button>
 
-        <nav className="hidden md:flex items-center gap-8">
-          <a
-            href="#certificates"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Certificates
-          </a>
-          <a
-            href="#progress"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Progress
-          </a>
-          <a
-            href="#works"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Works
-          </a>
-          <a
-            href="#notes"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Notes
-          </a>
-        </nav>
+          <div className="flex items-center gap-2">
+            <span className="text-xl font-bold text-foreground hidden sm:inline">
+              Power BI
+            </span>
+          </div>
 
-        <div className="flex items-center gap-2">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
           <Button
             variant="outline"
             size="lg"
@@ -71,13 +76,43 @@ export function Header({ isDark, setIsDark }: HeaderProps) {
             <a
               href="https://github.com/farhinrahman1/Power-BI"
               target="_blank"
-              className=""
+              rel="noopener noreferrer"
             >
               Github
             </a>
           </Button>
         </div>
-      </div>
-    </header>
+      </header>
+
+      {/* Mobile Sidebar */}
+      {mobileOpen && (
+        <div className="md:hidden fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-sm">
+          <nav className="flex flex-col gap-4 p-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="text-lg text-muted-foreground hover:text-foreground transition-colors py-2 border-b border-border/50"
+              >
+                {link.label}
+              </a>
+            ))}
+            <Button
+              variant="outline"
+              className="mt-4 border-primary/50 hover:bg-primary/10 w-full justify-center"
+            >
+              <a
+                href="https://github.com/farhinrahman1/Power-BI"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Github
+              </a>
+            </Button>
+          </nav>
+        </div>
+      )}
+    </>
   );
 }
