@@ -3,31 +3,7 @@
 import Link from "next/link";
 import { Card } from "../ui/card";
 import { ScrollArea } from "../ui/scroll-area";
-
-export const notes = [
-  {
-    id: 1,
-    title: "Introduction to Power BI",
-    snippet: "A tool that organize and visualize data.",
-    content:
-      "Power BI is a powerful business analytics and data visualization tool developed by Microsoft. It allows users to connect to data sources, transform raw data, and create stunning visualizations and interactive dashboards.\n\nKey Features:\n- Data visualization\n- Real-time analytics\n- Interactive dashboards\n- Data transformation\n- Sharing and collaboration",
-    category: "Data Visualization",
-  },
-  // {
-  //   id: 2,
-  //   title: "Database Design",
-  //   snippet: "Normalization vs denormalization trade-offs...",
-  //   content: "Full content about database design...",
-  //   category: "Database"
-  // },
-  // {
-  //   id: 3,
-  //   title: "API Security",
-  //   snippet: "JWT tokens and refresh rotation...",
-  //   content: "Full content about API security...",
-  //   category: "Security"
-  // },
-];
+import { notes } from "@/app/data/notes";
 
 export function NotesSection() {
   return (
