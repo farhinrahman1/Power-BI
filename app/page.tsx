@@ -36,9 +36,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background">
-      {/* Navigation with Dark Mode Toggle */}
-      <Header isDark={isDark} setIsDark={setIsDark} />
-
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16 max-w-7xl">
         {/* Hero Section */}
@@ -51,9 +48,17 @@ export default function Home() {
             </h1>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
               <div className="relative w-full">
-                <div className="rounded-2xl overflow-hidden border border-primary/30 shadow-2xl bg-muted/30">
+                <div className="rounded-2xl overflow-hidden m-3 space-y-5 p-2 border border-primary/30 shadow-2xl bg-muted/30">
                   <Image
                     src="/powerbicertificate.jpg"
+                    alt="Certificate preview"
+                    width={1600}
+                    height={900}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                  <Image
+                    src="/sqlcertificate.jpg"
                     alt="Certificate preview"
                     width={1600}
                     height={900}

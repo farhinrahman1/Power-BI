@@ -19,10 +19,10 @@ export function NotesSection() {
 
       <Card className="glass-effect border-primary/20 overflow-hidden">
         <ScrollArea className="h-64">
-          <div className="p-4 space-y-3">
+          <div className="p-4 m-3 space-y-3">
             {notes.map((note) => (
               <Link key={note.id} href={`/notes/${note.id}`}>
-                <div className="p-3 rounded-lg bg-muted/50 hover:bg-muted/80 transition-colors cursor-pointer border-l-2 border-primary hover:border-primary/80 hover:shadow-md">
+                <div className="p-3 m-5 rounded-lg bg-muted/50 hover:bg-muted/80 transition-colors cursor-pointer border-l-2 border-primary hover:border-primary/80 hover:shadow-md">
                   <h4 className="font-semibold text-foreground text-sm">
                     {note.title}
                   </h4>

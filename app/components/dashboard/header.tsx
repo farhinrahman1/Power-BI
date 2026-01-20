@@ -74,7 +74,7 @@ export function Header({ isDark, setIsDark }: HeaderProps) {
             className="border-primary/50 text-lg hover:bg-primary/10 bg-transparent"
           >
             <a
-              href="https://github.com/farhinrahman1/Power-BI"
+              href="https://github.com/farhinrahman1/Power-BI/blob/main/README.md"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -103,7 +103,7 @@ export function Header({ isDark, setIsDark }: HeaderProps) {
               className="mt-4 border-primary/50 hover:bg-primary/10 w-full justify-center"
             >
               <a
-                href="https://github.com/farhinrahman1/Power-BI"
+                href="https://github.com/farhinrahman1/Power-BI/blob/main/README.md"
                 target="_blank"
                 rel="noopener noreferrer"
               >
