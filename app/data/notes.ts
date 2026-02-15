@@ -317,4 +317,11 @@ SQL is essential because it allows:
           },
         ],
   },
+//   {
+//   id: "sales-insights",
+//   title: "📊 Sales Insights – Power BI Case Study",
+//   snippet: "Interactive dashboard analyzing revenue, profit trends and KPIs.",
+//   type: "project"
+// }
+
 ];

@@ -1,21 +1,15 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useState, use } from "react";
+import { useEffect, useState } from "react";
 import { Card } from "@/app/components/ui/card";
 import { notes } from "@/app/data/notes";
 
 type Note = (typeof notes)[0];
 
-export default function NotePage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export default function NotePage({ params }: { params: { id: string } }) {
   const router = useRouter();
-
-  // ✅ REQUIRED in Next.js 15
-  const { id } = use(params);
+  const { id } = params;
 
   const [note, setNote] = useState<Note | null>(null);
 
@@ -67,7 +61,7 @@ export default function NotePage({
         {/* Content */}
         <Card className="p-8">
           <div className="prose max-w-none">
-            {note.sections.map((section, idx) => (
+            {note.sections?.map((section, idx) => (
               <div key={idx} className="mb-10">
                 <h2 className="text-2xl font-semibold mb-4">
                   {section.heading}

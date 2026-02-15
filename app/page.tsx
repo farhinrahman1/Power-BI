@@ -43,9 +43,62 @@ export default function Home() {
           className={`mb-20 transition-all duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
         >
           <div className="space-y-6">
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground text-balance">
-              Power BI Dashboard
+            <h1 className="text-5xl md:text-5xl font-bold text-foreground text-balance">
+              Data Analytics Portfolio
+              <br />
+              SQL | Power BI | Business Intelligence
             </h1>
+            {/* Featured Project */}
+            <div
+              id="sales-insights"
+              className={`mb-20 transition-all duration-700 delay-150 ${
+                isLoaded ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <div className="space-y-8">
+                <h2 className="text-3xl font-bold text-foreground">
+                  Featured Project
+                </h2>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center border border-primary/20 rounded-2xl p-6 bg-muted/30 shadow-xl">
+                  <Image
+                    src="/sales_insight.png"
+                    alt="Sales Insights Dashboard"
+                    width={1200}
+                    height={700}
+                    className="rounded-xl"
+                    priority
+                  />
+
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-semibold">
+                      Sales Insights Dashboard — Power BI
+                    </h3>
+
+                    <p className="text-muted-foreground">
+                      End-to-end analytics project solving declining revenue
+                      issues for a hardware manufacturer using SQL, ETL, DAX,
+                      and interactive dashboards.
+                    </p>
+
+                    <ul className="list-disc list-inside text-muted-foreground space-y-2">
+                      <li>Revenue & Sales Quantity Tracking</li>
+                      <li>Top 5 Customers & Products</li>
+                      <li>Market-wise Revenue Breakdown</li>
+                      <li>Automated Dashboard (20% Time Saved)</li>
+                    </ul>
+
+                    <a
+                      href="/projects/sales-insights"
+                      className="inline-block mt-4 px-6 py-3 text-primary-foreground rounded-xl transition-colors cursor-pointer bg-blue-950 border-2 border-white hover:border-gray-300 hover:bg-blue-900 font-semibold"
+                    >
+                      View Full Case Study →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
               <div className="relative w-full">
                 <div className="rounded-2xl overflow-hidden m-3 space-y-5 p-2 border border-primary/30 shadow-2xl bg-muted/30">
